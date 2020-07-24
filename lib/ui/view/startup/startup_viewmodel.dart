@@ -1,5 +1,5 @@
-import 'package:file_explorer/app/locator.dart';
-import 'package:file_explorer/app/router.gr.dart';
+import 'package:Explorer/app/locator.dart';
+import 'package:Explorer/app/router.gr.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 

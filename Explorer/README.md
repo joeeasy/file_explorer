@@ -1,4 +1,4 @@
-# file_explorer
+# Explorer
 
 A new Flutter project.
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:file_explorer/app/locator.dart';
-import 'package:file_explorer/app/router.gr.dart';
+import 'package:Explorer/app/locator.dart';
+import 'package:Explorer/app/router.gr.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 void main() {
@@ -13,12 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Provider archicture with stack',
+      title: 'File Explorer',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: Routes.startupViewRoute,
+      initialRoute: Routes.homeViewRoute,
       onGenerateRoute: Router().onGenerateRoute,
       navigatorKey: locator<NavigationService>().navigatorKey,
     );

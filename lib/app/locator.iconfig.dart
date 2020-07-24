@@ -4,8 +4,8 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-import 'package:file_explorer/services/counter_service.dart';
-import 'package:file_explorer/services/third_party_service_module.dart';
+import 'package:Explorer/services/counter_service.dart';
+import 'package:Explorer/services/third_party_service_module.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:get_it/get_it.dart';
 

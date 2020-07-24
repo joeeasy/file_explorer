@@ -1,7 +1,7 @@
 
 import 'package:auto_route/auto_route_annotations.dart';
-import 'package:file_explorer/ui/view/home/home_view.dart';
-import 'package:file_explorer/ui/view/startup/startup_view.dart';
+import 'package:Explorer/ui/view/home/home_view.dart';
+import 'package:Explorer/ui/view/startup/startup_view.dart';
 
 @MaterialAutoRouter()
 

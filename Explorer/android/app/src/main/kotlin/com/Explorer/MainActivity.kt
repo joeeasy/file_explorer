@@ -1,4 +1,4 @@
-package com.file_explorer
+package com.Explorer
 
 import io.flutter.embedding.android.FlutterActivity
 
