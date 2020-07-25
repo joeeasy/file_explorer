@@ -1,3 +1,4 @@
+import 'package:Explorer/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:Explorer/app/locator.dart';
 import 'package:Explorer/app/router.gr.dart';
@@ -13,9 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'File Explorer',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        accentColor:  brandPrimary,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: Routes.homeViewRoute,
