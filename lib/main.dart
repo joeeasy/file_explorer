@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+//      debugShowCheckedModeBanner: ,
       title: 'File Explorer',
       theme: ThemeData(
         accentColor:  brandPrimary,

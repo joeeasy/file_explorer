@@ -22,7 +22,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
       title: title,
       centerTitle
       : centerTitle,
