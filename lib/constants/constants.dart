@@ -1,8 +1,11 @@
-const menuIcon = 'assets/icons/menu.svg';
-const optionIcon = 'assets/icons/option.svg';
-const searchIcon = 'assets/icons/search.svg';
 
 
+class AppIcon {
+  static const menu = 'assets/icons/menu.svg';
+  static const option = 'assets/icons/option.svg';
+  static const search = 'assets/icons/search.svg';
+  static const add = 'assets/icons/add.svg';
+}
 
 
 /*

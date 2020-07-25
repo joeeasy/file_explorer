@@ -26,7 +26,7 @@ class SearchBar extends StatelessWidget {
               style: inputStyle,
               decoration: InputDecoration(
                 prefixIcon: IconButton(
-                  icon: loadAsset(assetPath: searchIcon, isSvg: true),
+                  icon: loadAsset(assetPath: AppIcon.search, isSvg: true),
                   onPressed: () {},
                 ),
                 contentPadding: EdgeInsets.only(left: 16, right: 16),

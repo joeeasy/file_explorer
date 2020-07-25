@@ -19,12 +19,12 @@ class HomeAppBar extends StatelessWidget {
       elevation: 0,
       leading: IconButton(
         icon: loadAsset(
-            assetPath: menuIcon, isSvg: true, width: 24, height: 24,),
+            assetPath: AppIcon.menu, isSvg: true, width: 24, height: 24,),
       ),
       actions: <Widget>[
         IconButton(
           icon: loadAsset(
-              assetPath: optionIcon, isSvg: true, height: 24, width: 24),
+              assetPath: AppIcon.option, isSvg: true, height: 24, width: 24),
         ),
       ],
     );

@@ -1,7 +1,5 @@
 import 'package:Explorer/constants/colors.dart';
 import 'package:Explorer/constants/constants.dart';
-import 'package:Explorer/shared/shared_styling/style.dart';
-import 'package:Explorer/shared/shared_widgets/explore_appbar.dart';
 import 'package:Explorer/ui/view/home/widgets/home_scroll_view.dart';
 import 'package:Explorer/utils/icon_utils.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +16,7 @@ class HomeView extends StatelessWidget {
         body: HomeScrollView(),
         floatingActionButton: FloatingActionButton(
           onPressed: () => model.updateCounter(),
-          child: Icon(Icons.add),
+          child: loadAsset(assetPath: AppIcon.add, isSvg: true),
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
