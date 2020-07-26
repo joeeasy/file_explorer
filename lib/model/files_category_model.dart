@@ -13,44 +13,41 @@ class FileCategories {
   });
 }
 
-
 List<FileCategories> fileCategories = <FileCategories>[
   FileCategories(
     id: '_audio',
     icon: AppIcon.audio,
-    iconText: 'Audio'
-
+    iconText: 'Audio',
   ),
   FileCategories(
-      id: '_movies',
-      icon: AppIcon.video,
-      iconText: 'Movies'
-
+    id: '_movies',
+    icon: AppIcon.video,
+    iconText: 'Movies',
   ),
   FileCategories(
-      id: '_images',
-      icon: AppIcon.image,
-      iconText: 'Images'
-
+    id: '_images',
+    icon: AppIcon.image,
+    iconText: 'Images',
+  ),
+  FileCategories(id: '_apps', icon: AppIcon.app, iconText: 'APP'),
+  FileCategories(
+    id: '_document',
+    icon: AppIcon.document,
+    iconText: 'Documents',
   ),
   FileCategories(
-      id: '_apps',
-      icon: AppIcon.app,
-      iconText: 'APP'
-
+    id: '_logger',
+    icon: AppIcon.logger,
+    iconText: 'Logger',
   ),
   FileCategories(
-      id: '_document',
-      icon: AppIcon.document,
-      iconText: 'Documents'
-
+    id: '_drive',
+    icon: AppIcon.drive,
+    iconText: 'Drive',
   ),
   FileCategories(
-      id: '_logger',
-      icon: AppIcon.logger,
-      iconText: 'Logger'
-
+    id: '_bin',
+    icon: AppIcon.bin,
+    iconText: 'Bin',
   ),
-
-
 ];
