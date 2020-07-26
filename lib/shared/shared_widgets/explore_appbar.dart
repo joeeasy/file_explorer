@@ -9,6 +9,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget> actions;
   final Brightness brightness;
   final bool centerTitle;
+  final bool pinned;
 
   BaseAppBar({
     this.appBar,
@@ -17,20 +18,22 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.leading,
     this.actions,
-    this.brightness, this.centerTitle,
+    this.brightness,
+    this.centerTitle,
+    this.pinned,
   });
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       title: title,
-      centerTitle
-      : centerTitle,
+      centerTitle: centerTitle,
       leading: leading,
       actions: actions,
       backgroundColor: backgroundColor,
       elevation: elevation,
       brightness: brightness,
+      pinned: pinned,
     );
   }
 

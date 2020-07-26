@@ -9,6 +9,7 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseAppBar(
+      pinned: true,
       appBar: AppBar(),
       title: Text(
         headerTitle,
@@ -18,13 +19,21 @@ class HomeAppBar extends StatelessWidget {
       backgroundColor: AppColor.background,
       elevation: 0,
       leading: IconButton(
+        iconSize: 48,
         icon: loadAsset(
-            assetPath: AppIcon.menu, isSvg: true, width: 24, height: 24,),
+          assetPath: AppIcon.menu,
+          isSvg: true,
+          height: 48
+        ),
+        onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
           icon: loadAsset(
-              assetPath: AppIcon.option, isSvg: true, height: 24, width: 24),
+            assetPath: AppIcon.option,
+            isSvg: true,
+          ),
+          onPressed: () {},
         ),
       ],
     );

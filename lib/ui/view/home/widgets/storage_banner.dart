@@ -11,7 +11,7 @@ class StorageBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Container(
-        margin: EdgeInsets.only(left: 24, right: 24, top: 24),
+        margin: EdgeInsets.only(left: 24, right: 24, top: 24, bottom: 24),
         height: 202,
         decoration: BoxDecoration(
           color: AppColor.brandPrimary,
@@ -78,7 +78,7 @@ class StorageBanner extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            'Free Storage',
+                            'Internal Storage',
                             style: GoogleFonts.poppins(
                                 textStyle: TextStyle(
                                     color: Colors.white,

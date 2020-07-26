@@ -9,5 +9,5 @@ class AppColor {
  static const headerText = Color(0xff21205A);
  static const inputText = Color(0xff7C809E);
  static const brandSecondary = Color(0xff405DB5);
-
+ 
 }
