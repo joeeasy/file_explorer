@@ -6,13 +6,13 @@ final headerStyle = GoogleFonts.poppins(
   textStyle: TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w500,
-    color: headerTextColor,
+    color: AppColor.headerText,
   ),
 );
 
 final inputStyle = GoogleFonts.poppins(
   textStyle: TextStyle(
-    color: inputTextColor,
+    color: AppColor.inputText,
     fontSize: 18,
     fontWeight: FontWeight.normal,
     letterSpacing: -0.24,

@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 //      debugShowCheckedModeBanner: ,
       title: 'File Explorer',
       theme: ThemeData(
-        accentColor:  brandPrimary,
+        accentColor:  AppColor.brandPrimary,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: Routes.homeViewRoute,

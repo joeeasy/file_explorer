@@ -15,7 +15,7 @@ class HomeAppBar extends StatelessWidget {
         style: headerStyle,
       ),
       centerTitle: true,
-      backgroundColor: backgroundColor,
+      backgroundColor: AppColor.background,
       elevation: 0,
       leading: IconButton(
         icon: loadAsset(

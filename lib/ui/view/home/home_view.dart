@@ -12,11 +12,14 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomeViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: AppColor.background,
         body: HomeScrollView(),
         floatingActionButton: FloatingActionButton(
           onPressed: () => model.updateCounter(),
-          child: loadAsset(assetPath: AppIcon.add, isSvg: true),
+          child: loadAsset(
+            assetPath: AppIcon.add,
+            isSvg: true,
+          ),
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
