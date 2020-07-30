@@ -7,15 +7,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:Explorer/ui/view/startup/startup_view.dart';
 import 'package:Explorer/ui/view/home/home_view.dart';
+import 'package:Explorer/ui/view/startup/startup_view.dart';
 
 abstract class Routes {
-  static const startupViewRoute = '/';
-  static const homeViewRoute = '/home-view-route';
+  static const homeViewRoute = '/';
+  static const startupViewRoute = '/startup-view-route';
   static const all = {
-    startupViewRoute,
     homeViewRoute,
+    startupViewRoute,
   };
 }
 
@@ -30,14 +30,14 @@ class Router extends RouterBase {
   @override
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.startupViewRoute:
-        return MaterialPageRoute<dynamic>(
-          builder: (context) => StartupView(),
-          settings: settings,
-        );
       case Routes.homeViewRoute:
         return MaterialPageRoute<dynamic>(
           builder: (context) => HomeView(),
+          settings: settings,
+        );
+      case Routes.startupViewRoute:
+        return MaterialPageRoute<dynamic>(
+          builder: (context) => StartupView(),
           settings: settings,
         );
       default:

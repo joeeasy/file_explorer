@@ -5,7 +5,7 @@ import 'package:Explorer/utils/icon_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FolderList extends StatelessWidget {
+class FolderGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(

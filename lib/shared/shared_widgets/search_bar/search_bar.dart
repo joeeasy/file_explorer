@@ -3,7 +3,6 @@ import 'package:Explorer/shared/shared_styling/style.dart';
 import 'package:Explorer/shared/shared_widgets/search_bar/search_bar_viewmodel.dart';
 import 'package:Explorer/utils/icon_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
 
 class SearchBar extends StatelessWidget {

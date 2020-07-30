@@ -7,7 +7,7 @@ import 'package:Explorer/ui/view/startup/startup_view.dart';
 
 class $Router {
   @initial
-  StartupView startupViewRoute;
   HomeView homeViewRoute;
+  StartupView startupViewRoute;
 
 }
