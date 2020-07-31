@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
     return ViewModelBuilder<HomeViewModel>.reactive(
       onModelReady: (model) async {
         await model.checkStoragePermission();
-        model.getFiles(extensions: [
+         model.getFiles(extensions: [
           'png', 'jpg', 'jpeg', 'mp4', '3gp', 'oog'
         ]);
       },

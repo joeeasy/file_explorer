@@ -19,6 +19,8 @@ class HomeViewModel extends BaseViewModel {
   int get counter => _counter;
 
   bool get isStorageAllowed => _explorerSerice.isStorageAllowed;
+  double get freeDiskSpace => _explorerSerice.freeDiskSpace;
+  double get totalDiskSpace => _explorerSerice.totalDiskSpace;
 
   List<FileSystemEntity> get fileList => _explorerSerice.files;
 
@@ -33,19 +35,14 @@ class HomeViewModel extends BaseViewModel {
     await _explorerSerice.getFiles(
       extensions: extensions,
     );
-    loger(
-      e: fileList?.length,
-      loggerText: 'Files length',
-    );
     notifyListeners();
   }
 
-  void openImage(String imagePath) async {
-    notifyListeners();
-  }
 
-  void initVideoPlayerController(String path) {
-     _explorerSerice.initVideoPlayerController(path);
+
+
+  void getStorageInfo() {
+    _explorerSerice.getStorageInfo();
   }
 }
 

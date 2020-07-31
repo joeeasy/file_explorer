@@ -1,12 +1,16 @@
 import 'package:Explorer/constants/colors.dart';
 import 'package:Explorer/constants/constants.dart';
+import 'package:Explorer/ui/view/home/home_viewmodel.dart';
 import 'package:Explorer/utils/icon_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
-class StorageBanner extends StatelessWidget {
+class StorageBanner extends HookWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -99,10 +103,10 @@ class StorageBanner extends StatelessWidget {
                                       letterSpacing: -0.24),
                                 ),
                                 children: <TextSpan>[
-                                  TextSpan(text: '7.5 GB'),
+                                  TextSpan(text: ' GB'),
                                   TextSpan(text: ' / '),
                                   TextSpan(
-                                    text: '15 GB',
+                                    text: ' GB',
                                     style: TextStyle(
                                       color: Colors.white.withOpacity(0.6),
                                     ),
