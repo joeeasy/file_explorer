@@ -1,14 +1,11 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:Explorer/ui/view/home/widgets/video_thumbnail/video_thumbnail_view.dart';
 import 'package:Explorer/utils/helpers.dart';
-import 'package:disk_space/disk_space.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_file_utils/flutter_file_utils.dart';
 import 'package:flutter_file_utils/utils.dart';
 import 'package:injectable/injectable.dart';
-import 'package:open_file/open_file.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:video_player/video_player.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';

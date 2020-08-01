@@ -16,6 +16,7 @@ class AppIcon {
   static const drive = 'assets/icons/drive.svg';
   static const bin = 'assets/icons/bin.svg';
   static const grey_icon = 'assets/icons/grey_icon.svg';
+  static const placeholder = 'assets/images/placeholder.jpg';
 
 
 }
