@@ -8,9 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:Explorer/utils/extension_methods/extension.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:stacked/stacked.dart';
-import 'package:video_player/video_player.dart';
-
 class RecentFileList extends HookWidget {
   final List<FileSystemEntity> recentFiles;
   final HomeViewModel model;

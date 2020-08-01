@@ -7,9 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
+import 'package:Explorer/utils/extension_methods/extension.dart';
 
 class StorageBanner extends HookWidget {
+  final HomeViewModel model;
 
+  StorageBanner(this.model);
 
   @override
   Widget build(BuildContext context) {
@@ -103,10 +106,11 @@ class StorageBanner extends HookWidget {
                                       letterSpacing: -0.24),
                                 ),
                                 children: <TextSpan>[
-                                  TextSpan(text: ' GB'),
+                                  TextSpan(
+                                      text: '${model.freeDiskSpace.toGig} GB'),
                                   TextSpan(text: ' / '),
                                   TextSpan(
-                                    text: ' GB',
+                                    text: '${model.totalDiskSpace.toGig} GB',
                                     style: TextStyle(
                                       color: Colors.white.withOpacity(0.6),
                                     ),
@@ -119,11 +123,15 @@ class StorageBanner extends HookWidget {
                         height: 65,
                         width: 65,
                         child: SleekCircularSlider(
-                          initialValue: 50,
-                          max: 100,
+                          initialValue: model.totalDiskSpace.toGig -
+                              model.freeDiskSpace.toGig,
+                          max: model.totalDiskSpace.toGig,
                           innerWidget: (double value) => Center(
                             child: Text(
-                              '50%',
+                              '${model.getStoragePercentile(
+                                freeStorageSize: model.totalDiskSpace.toGig - model.freeDiskSpace.toGig,
+                                totalStorageSize: model.totalDiskSpace.toGig,
+                              )}%',
                               style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
                                       color: Colors.white,
@@ -133,8 +141,8 @@ class StorageBanner extends HookWidget {
                           ),
                           appearance: CircularSliderAppearance(
                             animationEnabled: true,
-                            customWidths:
-                                CustomSliderWidths(progressBarWidth: 5, trackWidth: 5),
+                            customWidths: CustomSliderWidths(
+                                progressBarWidth: 5, trackWidth: 5),
                             customColors: CustomSliderColors(
                               trackColor: AppColor.brandSecondary,
                               dotColor: Colors.transparent,

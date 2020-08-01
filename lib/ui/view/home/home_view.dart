@@ -11,6 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomeViewModel>.reactive(
       onModelReady: (model) async {
+        await model.getStorageInfo();
         await model.checkStoragePermission();
          model.getFiles(extensions: [
           'png', 'jpg', 'jpeg', 'mp4', '3gp', 'oog'

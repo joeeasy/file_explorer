@@ -19,8 +19,10 @@ class HomeViewModel extends BaseViewModel {
   int get counter => _counter;
 
   bool get isStorageAllowed => _explorerSerice.isStorageAllowed;
-  double get freeDiskSpace => _explorerSerice.freeDiskSpace;
-  double get totalDiskSpace => _explorerSerice.totalDiskSpace;
+
+  int get freeDiskSpace => _explorerSerice.freeDiskSpace;
+
+  int get totalDiskSpace => _explorerSerice.totalDiskSpace;
 
   List<FileSystemEntity> get fileList => _explorerSerice.files;
 
@@ -38,11 +40,13 @@ class HomeViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-
-
-
   void getStorageInfo() {
     _explorerSerice.getStorageInfo();
   }
-}
 
+  int getStoragePercentile({double freeStorageSize, double totalStorageSize}) =>
+      _explorerSerice.getStoragePercentile(
+        freeStorageSize: freeStorageSize,
+        totalStorageSize: totalStorageSize,
+      );
+}

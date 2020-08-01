@@ -80,7 +80,7 @@ class HomeScrollView extends HookWidget {
             slivers: <Widget>[
               HomeAppBar(),
               SearchBar(),
-              StorageBanner(),
+              StorageBanner(model),
               FolderGrid(),
               SliverToBoxAdapter(
                 child: Container(
