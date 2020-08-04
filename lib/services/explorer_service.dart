@@ -54,7 +54,7 @@ class ExplorerSerice {
 
 
   void initVideoPlayerController(String path) async {
-    _playerController = await VideoPlayerController.file(File(path));
+    _playerController =  VideoPlayerController.file(File(path))..initialize();
 
   }
 

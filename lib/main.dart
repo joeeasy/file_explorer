@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         accentColor:  AppColor.brandPrimary,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: Routes.homeViewRoute,
+      initialRoute: Routes.homeView,
       onGenerateRoute: Router().onGenerateRoute,
       navigatorKey: locator<NavigationService>().navigatorKey,
     );

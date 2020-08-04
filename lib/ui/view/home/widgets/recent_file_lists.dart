@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:Explorer/utils/extension_methods/extension.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class RecentFileList extends HookWidget {
   final List<FileSystemEntity> recentFiles;
   final HomeViewModel model;
@@ -38,6 +39,8 @@ class RecentFileList extends HookWidget {
                     RenderMediaTypes(
                       model: model,
                       index: index,
+                      current: recentFiles[index],
+                      fileList: recentFiles,
                     ),
                     Text(
                       recentFiles[index]?.path?.getFileName(),
@@ -68,28 +71,32 @@ class RenderMediaTypes extends StatelessWidget {
     Key key,
     this.index,
     this.model,
+    this.fileList,
+    this.current,
   }) : super(key: key);
 
-  final HomeViewModel model;
+  final List<FileSystemEntity> fileList;
+  final FileSystemEntity current;
   final int index;
+  final HomeViewModel model;
 
   @override
   Widget build(BuildContext context) {
-    var file = model?.fileList[index].path;
+    var file = fileList[index].path;
 
-
-    return (file.isImage())
-        ? GestureDetector(
-          onTap: () => loger(e:file.split('.').last),
-          child: Image.file(
-              model.fileList[index],
+    return GestureDetector(
+      onTap: () => model.previewFile(
+          currentIndex: index, files: fileList, current: current),
+      child: file.isImage()
+          ? Image.file(
+              fileList[index],
               fit: BoxFit.fitHeight,
               height: 60,
               width: 60,
+            )
+          : VideoThumbNail(
+              filePath: fileList[index].path,
             ),
-        )
-        : VideoThumbNail(
-            filePath: model.fileList[index].path,
-          );
+    );
   }
 }

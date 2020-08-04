@@ -8,6 +8,7 @@ import 'package:Explorer/services/counter_service.dart';
 import 'package:Explorer/services/third_party_service_module.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:Explorer/services/explorer_service.dart';
+import 'package:Explorer/services/media_service.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
@@ -16,6 +17,7 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<DialogService>(
       () => thirdPartyServiceModule.dialogService);
   g.registerLazySingleton<ExplorerSerice>(() => ExplorerSerice());
+  g.registerLazySingleton<MediaService>(() => MediaService());
   g.registerLazySingleton<NavigationService>(
       () => thirdPartyServiceModule.navigationService);
 }

@@ -18,6 +18,7 @@ class HomeAppBar extends StatelessWidget {
       centerTitle: true,
       backgroundColor: AppColor.background,
       elevation: 0,
+      brightness: Brightness.light,
       leading: IconButton(
         iconSize: 48,
         icon: loadAsset(
