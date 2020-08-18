@@ -10,17 +10,20 @@ class VideoThumbNailViewModel extends BaseViewModel {
   ExplorerSerice _explorerSerice = locator<ExplorerSerice>();
   VideoPlayerController get controller => _explorerSerice.controller;
   Uint8List get thumbNail => _explorerSerice.thumbNail;
+  set thumbNail(Uint8List thumbnail) {
+    return null;
+  }
 
   void initVideoPlayerController(String file) {
 
     _explorerSerice.initVideoPlayerController(file);
-    loger(e: controller.value.aspectRatio, loggerText: 'Controller');
     notifyListeners();
   }
 
-  void getThumbNail(String filePath) {
+  String getThumbNail(String filePath) {
     _explorerSerice.getThumbNail(filePath);
     notifyListeners();
+    return _explorerSerice.thumbNail.toString();
   }
 
 

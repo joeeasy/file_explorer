@@ -1,7 +1,6 @@
 import 'package:Explorer/ui/view/home/widgets/video_thumbnail/video_thumbnail_view_model.dart';
 import 'package:Explorer/utils/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:stacked/stacked.dart';
 import 'package:video_player/video_player.dart';

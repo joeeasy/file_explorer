@@ -2,7 +2,6 @@ import 'package:Explorer/constants/colors.dart';
 import 'package:Explorer/ui/view/home/widgets/home_scroll_view.dart';
 import 'package:Explorer/utils/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:stacked/stacked.dart';
 
 import 'home_viewmodel.dart';

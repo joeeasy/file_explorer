@@ -76,7 +76,7 @@ class HomeViewModel extends BaseViewModel {
         videoPlayerController: videoPlayerController,
       ),
     );
-    notifyListeners();
+//    notifyListeners();
   }
 
 

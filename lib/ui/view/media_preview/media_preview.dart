@@ -4,10 +4,10 @@ import 'package:Explorer/constants/colors.dart';
 import 'package:Explorer/ui/view/media_preview/media_preview_viewmodel.dart';
 import 'package:Explorer/ui/view/media_preview/widgets/video_player.dart';
 import 'package:Explorer/utils/extension_methods/extension.dart';
+import 'package:Explorer/utils/helpers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:stacked/stacked.dart';
@@ -26,6 +26,9 @@ class MediaPreviewScreen extends HookWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<MediaPreviewViewModel>.nonReactive(
       onModelReady: (model) {
+        if(!files[currentIndex].path.isImage()) {
+          loger(e: currentIndex, loggerText: 'Index from media preview');
+        }
         model.initializeMediaSettings();
       },
       builder: (context, model, child) => AnnotatedRegion<SystemUiOverlayStyle>(
@@ -37,16 +40,16 @@ class MediaPreviewScreen extends HookWidget {
           backgroundColor: Colors.black,
           body: Container(
             child: Center(
-              child: current.path.isImage()
+              child: files[currentIndex].path.isImage()
                   ? PhotoView(
                       imageProvider: FileImage(
                         File(
-                          current.path,
+                          files[currentIndex].path,
                         ),
                       ),
                     )
                   : VideoPlayerWidget(
-                      current.path,
+                      files[currentIndex].path,
                     ),
             ),
           ),

@@ -1,8 +1,8 @@
 import 'dart:io';
 
+import 'package:Explorer/constants/constants.dart';
 import 'package:Explorer/ui/view/home/home_viewmodel.dart';
 import 'package:Explorer/ui/view/home/widgets/video_thumbnail/video_thumbnail_view.dart';
-import 'package:Explorer/ui/view/home/widgets/video_thumbnail/video_thumbnail_view_model.dart';
 import 'package:Explorer/utils/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -85,8 +85,16 @@ class RenderMediaTypes extends StatelessWidget {
     var file = fileList[index].path;
 
     return GestureDetector(
-      onTap: () => model.previewFile(
-          currentIndex: index, files: fileList, current: current),
+      onTap: () {
+        if (!fileList[index].path.isImage()) {
+          loger(e: index, loggerText: 'File index from ontap');
+        }
+        model.previewFile(
+          currentIndex: index,
+          files: fileList,
+          current: current,
+        );
+      },
       child: file.isImage()
           ? Image.file(
               fileList[index],

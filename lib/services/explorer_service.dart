@@ -73,6 +73,7 @@ class ExplorerSerice {
       // specify the width of the thumbnail, let the height auto-scaled to keep the source aspect ratio
       quality: 25,
     );
+    loger(e: _thumbNail, loggerText: 'thumbnail for each videos');
   }
 
   int getStoragePercentile({double freeStorageSize, double totalStorageSize}) {
