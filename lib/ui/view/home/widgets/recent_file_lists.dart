@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:Explorer/constants/constants.dart';
+import 'package:Explorer/model/files.dart';
 import 'package:Explorer/ui/view/home/home_viewmodel.dart';
 import 'package:Explorer/ui/view/home/widgets/video_thumbnail/video_thumbnail_view.dart';
 import 'package:Explorer/utils/helpers.dart';
@@ -10,7 +11,7 @@ import 'package:Explorer/utils/extension_methods/extension.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RecentFileList extends HookWidget {
-  final List<FileSystemEntity> recentFiles;
+  final List<FileModel> recentFiles;
   final HomeViewModel model;
 
   RecentFileList({@required this.recentFiles, this.model});
@@ -22,9 +23,9 @@ class RecentFileList extends HookWidget {
         (context, index) {
           loger(
             loggerText: 'recentFiles[index].path.toString()',
-            e: recentFiles[index].path,
+            e: recentFiles[index].filePath,
           );
-          var file = model?.fileList[index].path;
+          var file = recentFiles[index].filePath;
           return Container(
             padding: EdgeInsets.all(8),
             child: OverflowBox(
@@ -43,7 +44,7 @@ class RecentFileList extends HookWidget {
                       fileList: recentFiles,
                     ),
                     Text(
-                      recentFiles[index]?.path?.getFileName(),
+                      recentFiles[index]?.filePath?.getFileName(),
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
                           fontSize: 16,
@@ -75,18 +76,18 @@ class RenderMediaTypes extends StatelessWidget {
     this.current,
   }) : super(key: key);
 
-  final List<FileSystemEntity> fileList;
-  final FileSystemEntity current;
+  final List<FileModel> fileList;
+  final FileModel current;
   final int index;
   final HomeViewModel model;
 
   @override
   Widget build(BuildContext context) {
-    var file = fileList[index].path;
+    var file = fileList[index].filePath;
 
     return GestureDetector(
       onTap: () {
-        if (!fileList[index].path.isImage()) {
+        if (!fileList[index].filePath.isImage()) {
           loger(e: index, loggerText: 'File index from ontap');
         }
         model.previewFile(
@@ -97,13 +98,13 @@ class RenderMediaTypes extends StatelessWidget {
       },
       child: file.isImage()
           ? Image.file(
-              fileList[index],
+              fileList[index].file,
               fit: BoxFit.fitHeight,
               height: 60,
               width: 60,
             )
           : VideoThumbNail(
-              filePath: fileList[index].path,
+              fileModel: fileList[index],
             ),
     );
   }

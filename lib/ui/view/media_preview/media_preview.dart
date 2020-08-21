@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:Explorer/constants/colors.dart';
+import 'package:Explorer/model/files.dart';
 import 'package:Explorer/ui/view/media_preview/media_preview_viewmodel.dart';
 import 'package:Explorer/ui/view/media_preview/widgets/video_player.dart';
 import 'package:Explorer/utils/extension_methods/extension.dart';
@@ -14,7 +15,7 @@ import 'package:stacked/stacked.dart';
 import 'package:video_player/video_player.dart';
 
 class MediaPreviewScreen extends HookWidget {
-  final List<FileSystemEntity> files;
+  final List<FileModel> files;
   final FileSystemEntity current;
   final int currentIndex;
   final VideoPlayerController videoPlayerController;
@@ -26,7 +27,7 @@ class MediaPreviewScreen extends HookWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<MediaPreviewViewModel>.nonReactive(
       onModelReady: (model) {
-        if(!files[currentIndex].path.isImage()) {
+        if(!files[currentIndex].isImage) {
           loger(e: currentIndex, loggerText: 'Index from media preview');
         }
         model.initializeMediaSettings();
@@ -40,16 +41,16 @@ class MediaPreviewScreen extends HookWidget {
           backgroundColor: Colors.black,
           body: Container(
             child: Center(
-              child: files[currentIndex].path.isImage()
+              child: files[currentIndex].isImage
                   ? PhotoView(
                       imageProvider: FileImage(
                         File(
-                          files[currentIndex].path,
+                          files[currentIndex].filePath,
                         ),
                       ),
                     )
                   : VideoPlayerWidget(
-                      files[currentIndex].path,
+                      files[currentIndex].filePath,
                     ),
             ),
           ),

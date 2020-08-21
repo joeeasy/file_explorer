@@ -7,6 +7,7 @@
 // ignore_for_file: public_member_api_docs
 import 'dart:io';
 
+import 'package:Explorer/model/files.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -45,7 +46,7 @@ class Router extends RouterBase {
         builder: (context) => MediaPreviewScreen(
           args.videoPlayerController,
           files: args.files,
-          current: args.current,
+          current: args.current.file,
           currentIndex: args.currentIndex,
         ),
         settings: data,
@@ -62,8 +63,8 @@ class Router extends RouterBase {
 /// MediaPreviewScreen arguments holder class
 class MediaPreviewScreenArguments {
   final VideoPlayerController videoPlayerController;
-  final List<FileSystemEntity> files;
-  final FileSystemEntity current;
+  final List<FileModel> files;
+  final FileModel current;
   final int currentIndex;
   MediaPreviewScreenArguments(
       {@required this.videoPlayerController,

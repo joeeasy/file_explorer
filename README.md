@@ -9,4 +9,3 @@ This framework is setuped with the stack package which makes use of the `Provide
 - Reactive support for easier data binding
 - uses `flutter_hooks` thus boiler plate code from create a stateful widget can be elimated
 - Support partial widget rebuild(you don't have to unneccessarily rebuild your widget tree all the time)
-
