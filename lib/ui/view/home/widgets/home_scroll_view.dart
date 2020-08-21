@@ -92,7 +92,7 @@ class HomeScrollView extends HookWidget {
                 ),
               ),
               RecentFileList(
-                recentFiles: model.fileList,
+                recentFiles: model.files,
                 model: model,
               )
             ],

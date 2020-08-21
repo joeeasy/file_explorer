@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:Explorer/app/locator.dart';
 import 'package:Explorer/app/router.gr.dart';
+import 'package:Explorer/model/files.dart';
 import 'package:Explorer/services/explorer_service.dart';
 import 'package:Explorer/utils/helpers.dart';
 
@@ -25,7 +26,7 @@ class HomeViewModel extends BaseViewModel {
 
   int get totalDiskSpace => _explorerSerice.totalDiskSpace;
 
-  List<FileSystemEntity> get fileList => _explorerSerice.files;
+  List<FileModel> get files => _explorerSerice.formatedFiles;
 
   VideoPlayerController get controller => _explorerSerice.controller;
 
@@ -64,9 +65,9 @@ class HomeViewModel extends BaseViewModel {
 
   void previewFile(
       {int currentIndex,
-      List<FileSystemEntity> files,
+      List<FileModel> files,
       VideoPlayerController videoPlayerController,
-      FileSystemEntity current}) async {
+      FileModel current}) async {
     _navigationService.navigateTo(
       Routes.mediaPreviewScreen,
       arguments: MediaPreviewScreenArguments(
